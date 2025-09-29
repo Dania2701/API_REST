@@ -26,7 +26,7 @@ ejecutar comando en la terminal: uvicorn main:app --reload
 
 #Para este caso en especifico ya se encuentran agregados los datos a la base de datos pero para reiniciarla solo hace falta eliminar el archivo "test.db" y continuar con el siguiente paso para agregar nuevamente los datos.
 5.-Cargar datos iniciales en la terminal: 
-python seeds/seeds_all.py ---> #Esto creará registros de productos, clientes y ventas con detalles aleatorios
+python seeds/seed_all.py ---> #Esto creará registros de productos, clientes y ventas con detalles aleatorios
 
 #Descripción de la Funcionalidad General. 
 
