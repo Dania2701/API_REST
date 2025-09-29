@@ -17,4 +17,4 @@ class DetalleVenta(Base):
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     venta = relationship("Venta", back_populates="detalles")
-    producto = relationship("Producto")
+    producto = relationship("Producto", lazy="joined")

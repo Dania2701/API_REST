@@ -1,7 +1,6 @@
 from sqlalchemy import Integer, String, Column, DateTime
 import uuid
 from services.db import Base   
-from sqlalchemy.orm import Mapped, mapped_column
 from datetime import datetime
 
 class Cliente(Base):

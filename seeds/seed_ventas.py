@@ -1,3 +1,6 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from services.db import SessionLocal
 from models.cliente import Cliente
 from models.producto import Producto
@@ -6,7 +9,7 @@ from models.detalle_venta import DetalleVenta
 from datetime import datetime
 import random
 
-def seed_ventas_y_detalles_realistas():
+def seed_ventas_y_detalles():
     db = SessionLocal()
     clientes = db.query(Cliente).all()
     productos = db.query(Producto).all()
@@ -21,7 +24,7 @@ def seed_ventas_y_detalles_realistas():
             productos_en_venta = random.sample(productos, k=random.randint(1, min(4, len(productos))))
             for producto in productos_en_venta:
                 cantidad = random.randint(1, 50)
-                # Lógica de descuentos escalonados
+                #descuentos
                 if cantidad >= 15:
                     descuento = 0.25  # 25% de descuento
                 elif cantidad >= 10:
@@ -47,4 +50,4 @@ def seed_ventas_y_detalles_realistas():
     db.close()
 
 if __name__ == "__main__":
-    seed_ventas_y_detalles_realistas()
+    seed_ventas_y_detalles()

@@ -52,7 +52,7 @@ def actualizar_producto(producto_id: int, nombre: str, categoria: str, precio: f
     db.refresh(producto)
     return producto
 
-#Eliminar productos
+#eliminar productos
 @router.delete("/{producto_id}")
 def eliminar_producto(producto_id: int, db: Session = Depends(get_db)):
     producto = db.query(Producto).filter(Producto.id == producto_id).first()
